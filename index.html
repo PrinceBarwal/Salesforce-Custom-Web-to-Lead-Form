@@ -1,73 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web To Lead Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web To Lead Form</title>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
 
-  <body>
-    <h1>Create Lead</h1>
-    <form
-      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DGB000002GJru"
-      method="POST"
-      onsubmit="return beforeSubmit()"
-    >
-      <input type="hidden" name="oid" value="00DGB000002GJru" />
-      <input
-        type="hidden"
-        name="retURL"
-        value="https://princebarwal.github.io/Salesforce-Custom-Web-to-Lead-Form/thanks.html"
-      />
-      <input
-        type="hidden"
-        name="Lead_Date__c"
-        class="outputDate"
-      />
+    <body>
+        <h1>Create Lead</h1>
+        <form
+            action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DGB000002GJru"
+            method="POST"
+            onsubmit="return beforeSubmit()">
+            <input type=hidden name='captcha_settings'
+                value='{"keyname":"Web_to_Lead","fallback":"true","orgId":"00DGB000002GJru","ts":""}'>
+            <input type="hidden" name="oid" value="00DGB000002GJru" />
+            <input
+                type="hidden"
+                name="retURL"
+                value="https://princebarwal.github.io/Salesforce-Custom-Web-to-Lead-Form/thanks.html" />
+            <input
+                type="hidden"
+                name="Lead_Date__c"
+                class="outputDate" />
 
-      <label for="first_name">First Name</label
-      ><input
-        id="first_name"
-        maxlength="40"
-        name="first_name"
-        size="20"
-        type="text"
-        required="true"
-      /><br />
+            <label for="first_name">First Name</label><input
+                id="first_name"
+                maxlength="40"
+                name="first_name"
+                size="20"
+                type="text"
+                required="true" /><br />
 
-      <label for="last_name">Last Name</label
-      ><input
-        id="last_name"
-        maxlength="80"
-        name="last_name"
-        size="20"
-        type="text"
-        required="true"
-      /><br />
+            <label for="last_name">Last Name</label><input
+                id="last_name"
+                maxlength="80"
+                name="last_name"
+                size="20"
+                type="text"
+                required="true" /><br />
 
-      <label for="email">Email</label
-      ><input
-        id="email"
-        maxlength="80"
-        name="email"
-        size="20"
-        type="text"
-        required="true"
-      /><br />
+            <label for="email">Email</label><input
+                id="email"
+                maxlength="80"
+                name="email"
+                size="20"
+                type="text"
+                required="true" /><br />
 
-      <!-- Lead Date:<span class="dateInput dateOnlyInput"
+            <!-- Lead Date:<span class="dateInput dateOnlyInput"
         ><input
           id="00NGB00000ZJyox"
           name="00NGB00000ZJyox"
           size="12"
           type="text" /></span
       ><br /> -->
-      <label for="lead_date">Lead Date</label>
-      <input type="date" required="true" class="inputDate"/>
+            <label for="lead_date">Lead Date</label>
+            <input type="date" required="true" class="inputDate" />
+            <div class="g-recaptcha"
+                data-sitekey="6LeFR9gqAAAAAA9YM3VCRwwSQ5wv3GI_h3JXjNsy"></div><br>
 
-      <input type="submit" name="submit" class="submit" />
-    </form>
-  </body>
+            <input type="submit" name="submit" class="submit" />
+        </form>
+    </body>
 </html>
