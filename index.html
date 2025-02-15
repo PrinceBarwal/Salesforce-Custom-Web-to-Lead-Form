@@ -13,7 +13,7 @@
     <form
       action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DGB000002GJru"
       method="POST"
-      onsubmit="beforeSubmit()"
+      onsubmit="return beforeSubmit()"
     >
       <input type="hidden" name="oid" value="00DGB000002GJru" />
       <input
@@ -23,7 +23,7 @@
       />
       <input
         type="hidden"
-        name="Lead_Data__c"
+        name="Lead_Date__c"
         class="outputDate"
       />
 
@@ -64,7 +64,7 @@
           size="12"
           type="text" /></span
       ><br /> -->
-      <label for="data">Lead Date</label>
+      <label for="lead_date">Lead Date</label>
       <input type="date" required="true" class="inputDate"/>
 
       <input type="submit" name="submit" class="submit" />
