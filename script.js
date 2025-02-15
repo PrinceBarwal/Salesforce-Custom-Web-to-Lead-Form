@@ -18,12 +18,10 @@ function beforeSubmit(event) {
             let formattedDate = `${day}/${month}/${year}`; // Format: dd/mm/yyyy
             outputDate.value = formattedDate;
             console.log("Formatted Lead Date: ", outputDate.value);
-            return true;
+            
         } else {
             console.error("No Lead Date selected");
-            alert("Please select a Lead Date before submitting.");
-            return false; // Prevent form submission
-            
+            alert("Please select a Lead Date before submitting.");           
         }
     }
     else{
