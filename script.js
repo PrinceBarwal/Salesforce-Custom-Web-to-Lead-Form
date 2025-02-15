@@ -13,6 +13,7 @@ function beforeSubmit(event) {
             // return true; // Allow form submission
             let dateObj = new Date(inputDate.value);
             let day = String(dateObj.getDate()).padStart(2, '0'); // Ensure two-digit day
+            let month = String(dateObj.getMonth() + 1).padStart(2, '0'); // Months are 0-based
             let year = dateObj.getFullYear();
     
             let formattedDate = `${day}/${month}/${year}`; // Format: dd/mm/yyyy
